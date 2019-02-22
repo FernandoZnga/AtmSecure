@@ -24,23 +24,11 @@ namespace AtmApp.UI
             Application.Run(new Login());
         }
 
-        public static bool InsertNewUser(string firstName, string lastName, string userName, string passWord)
+        public static bool InsertNewUser(User user)
         {
-            var user = new User
-            {
-                FirstName = firstName,
-                LastName = lastName,
-                UserName = userName,
-                PassWord = passWord,
-                CreatedAt = DateTime.Now,
-                UpdatedAt = DateTime.Now
-            };
             var account = new Account
             {
-                Balance = 0,
                 User = user,
-                CreatedAt = DateTime.Now,
-                UpdatedAt = DateTime.Now
             };
             using (var context = new AtmContext())
             {

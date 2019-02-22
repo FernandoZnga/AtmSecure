@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AtmApp.UI;
+using AtmApp.Domain;
 
 namespace AtmApp.UI
 {
@@ -27,7 +28,13 @@ namespace AtmApp.UI
             }
             else
             {
-                var executionOk = Program.InsertNewUser(textBoxFirstName.Text, textBoxLastName.Text, textBoxUsername.Text, textBoxPassword.Text);
+                var user = new User() {
+                    FirstName = textBoxFirstName,
+                    LastName = textBoxLastName,
+                    Username = textBoxUsername,
+                    Password = textBoxPassword
+                };
+                var executionOk = Program.InsertNewUser(user);
                 if (executionOk)
                 {
                     MessageBox.Show("User created!");
