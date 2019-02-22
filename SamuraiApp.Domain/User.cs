@@ -8,6 +8,8 @@ namespace AtmApp.Domain
         public User()
         {
             Accounts = new List<Account>();
+            CreatedAt = DateTime.Now;
+            UpdatedAt = DateTime.Now;
         }
         public List<Account> Accounts { get; set; }
 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AtmApp.UI;
+using AtmApp.Domain;
 
 namespace AtmApp.UI
 {
@@ -23,14 +24,25 @@ namespace AtmApp.UI
             if (textBoxFirstName.Text == "" || textBoxLastName.Text == ""
                 || textBoxUsername.Text == "" || textBoxPassword.Text == "")
             {
-                MessageBox.Show("Please enter all required data");
+                MessageBox.Show("Please enter all required data","Warning");
             }
             else
             {
-                var executionOk = Program.InsertNewUser(textBoxFirstName.Text, textBoxLastName.Text, textBoxUsername.Text, textBoxPassword.Text);
+                var user = new User() {
+                    FirstName = textBoxFirstName.Text,
+                    LastName = textBoxLastName.Text,
+                    UserName = textBoxUsername.Text,
+                    PassWord = textBoxPassword.Text
+                };
+                var account = new Account()
+                {
+                    User = user
+                };
+                var handle = new Program();
+                var executionOk = handle.InsertNewUser(user, account);
                 if (executionOk)
                 {
-                    MessageBox.Show("User created!");
+                    MessageBox.Show("User created!","Success");
                     textBoxFirstName.Clear();
                     textBoxLastName.Clear();
                     textBoxUsername.Clear();
@@ -38,7 +50,7 @@ namespace AtmApp.UI
                 }
                 else
                 {
-                    MessageBox.Show("Error, User not created!");
+                    MessageBox.Show("User not created!","Error");
                 }
             }
         }

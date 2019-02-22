@@ -38,7 +38,8 @@ namespace AtmApp.UI
             } else
             {
                 var username = new User();
-                username = Program.PerformLogin(textBoxUsername.Text);
+                var handle = new Program();
+                username = handle.PerformLogin(textBoxUsername.Text);
                 if (username.PassWord == textBoxPassword.Text)
                 {
                     Hide();
@@ -47,7 +48,7 @@ namespace AtmApp.UI
                 }
                 else
                 {
-                    MessageBox.Show("Error, Bad Username or Password!");
+                    MessageBox.Show("Bad Username or Password!","Error");
                 }
             }
         }
