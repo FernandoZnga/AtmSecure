@@ -24,12 +24,8 @@ namespace AtmApp.UI
             Application.Run(new Login());
         }
 
-        public static bool InsertNewUser(User user)
+        public bool InsertNewUser(User user, Account account)
         {
-            var account = new Account
-            {
-                User = user,
-            };
             using (var context = new AtmContext())
             {
                 try
@@ -49,7 +45,7 @@ namespace AtmApp.UI
                 }
             }
         }
-        public static User PerformLogin(string username)
+        public User PerformLogin(string username)
         {
             var users = new User();
             return users = _context.Users.FirstOrDefault(s => s.UserName == username);

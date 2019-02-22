@@ -34,7 +34,12 @@ namespace AtmApp.UI
                     UserName = textBoxUsername.Text,
                     PassWord = textBoxPassword.Text
                 };
-                var executionOk = Program.InsertNewUser(user);
+                var account = new Account()
+                {
+                    User = user
+                };
+                var handle = new Program();
+                var executionOk = handle.InsertNewUser(user, account);
                 if (executionOk)
                 {
                     MessageBox.Show("User created!","Success");
