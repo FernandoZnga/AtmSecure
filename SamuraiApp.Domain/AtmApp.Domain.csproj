@@ -7,8 +7,8 @@
     <ProjectGuid>{7850DD71-0111-4506-B7C8-50307D74D50A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SamuraiApp.Domain</RootNamespace>
-    <AssemblyName>SamuraiApp.Domain</AssemblyName>
+    <RootNamespace>AtmApp.Domain</RootNamespace>
+    <AssemblyName>AtmApp.Domain</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

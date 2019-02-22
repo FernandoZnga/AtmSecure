@@ -8,8 +8,8 @@
     <ProjectGuid>{95166C3C-F051-4B4C-A109-EEE7D855E334}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SamuraiApp.Data</RootNamespace>
-    <AssemblyName>SamuraiApp.Data</AssemblyName>
+    <RootNamespace>AtmApp.Data</RootNamespace>
+    <AssemblyName>AtmApp.Data</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
