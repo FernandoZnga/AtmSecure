@@ -1,12 +1,4 @@
-﻿using AtmApp.Domain;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace AtmApp.UI
@@ -37,10 +29,11 @@ namespace AtmApp.UI
                 MessageBox.Show("Please enter a username and password");
             } else
             {
-                var username = new User();
-                var handle = new Program();
-                username = handle.PerformLogin(textBoxUsername.Text);
-                if (username.PassWord == textBoxPassword.Text)
+                var use = new Program();
+                var executeOk = new bool();
+
+                executeOk = use.HandleLogin(textBoxUsername.Text, textBoxPassword.Text);
+                if (executeOk)
                 {
                     Hide();
                     Main main = new Main();
