@@ -24,7 +24,7 @@ namespace AtmApp.UI
             if (textBoxFirstName.Text == "" || textBoxLastName.Text == ""
                 || textBoxUsername.Text == "" || textBoxPassword.Text == "")
             {
-                MessageBox.Show("Please enter all required data");
+                MessageBox.Show("Please enter all required data","Warning",MessageBoxIcon.Warning);
             }
             else
             {
@@ -37,7 +37,7 @@ namespace AtmApp.UI
                 var executionOk = Program.InsertNewUser(user);
                 if (executionOk)
                 {
-                    MessageBox.Show("User created!");
+                    MessageBox.Show("User created!","Success");
                     textBoxFirstName.Clear();
                     textBoxLastName.Clear();
                     textBoxUsername.Clear();
@@ -45,7 +45,7 @@ namespace AtmApp.UI
                 }
                 else
                 {
-                    MessageBox.Show("Error, User not created!");
+                    MessageBox.Show("User not created!","Error",MessageBoxIcon.Exclamation);
                 }
             }
         }

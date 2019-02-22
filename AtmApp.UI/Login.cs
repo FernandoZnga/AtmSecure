@@ -47,7 +47,7 @@ namespace AtmApp.UI
                 }
                 else
                 {
-                    MessageBox.Show("Error, Bad Username or Password!");
+                    MessageBox.Show("Bad Username or Password!","Error",MessageBoxIcon.Exclamation);
                 }
             }
         }
