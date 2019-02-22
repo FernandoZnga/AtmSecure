@@ -1,10 +1,6 @@
 ﻿using AtmApp.Data;
 using AtmApp.Domain;
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AtmApp.Backend
 {
@@ -17,11 +13,12 @@ namespace AtmApp.Backend
         }
         public bool CreateUser(string firstName, string lastName, string userName, string passWord)
         {
+            Hash hash = new Hash();
             var user = new User();
             user.FirstName = firstName;
             user.LastName = lastName;
             user.UserName = userName;
-            user.PassWord = passWord;
+            user.PassWord = hash.GenerateSHA256String(passWord);
 
             var account = new Account();
             account.User = user;
