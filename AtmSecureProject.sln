@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtmUI", "SomeUI\AtmUI.csproj", "{6BE27155-F8C7-4200-ACB4-83A768EBE6C7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtmApp.UI", "AtmApp.UI\AtmApp.UI.csproj", "{0B17811B-E1CB-4F78-A67D-17B8DBC29B4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{6BE27155-F8C7-4200-ACB4-83A768EBE6C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BE27155-F8C7-4200-ACB4-83A768EBE6C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BE27155-F8C7-4200-ACB4-83A768EBE6C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B17811B-E1CB-4F78-A67D-17B8DBC29B4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B17811B-E1CB-4F78-A67D-17B8DBC29B4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B17811B-E1CB-4F78-A67D-17B8DBC29B4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B17811B-E1CB-4F78-A67D-17B8DBC29B4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -17,9 +17,9 @@ namespace SomeUI
 
         private static void Main(string[] args)
         {
-            _context.GetService<ILoggerFactory>().AddProvider(new MyLoggerProvider());
+            //_context.GetService<ILoggerFactory>().AddProvider(new MyLoggerProvider());
 
-            InsertNewUser();
+            //InsertNewUser();
             
             //InsertSamurai();
             //InsertMultipleSamurais();
@@ -41,16 +41,16 @@ namespace SomeUI
         {
             var user = new User
             {
-                FirstName = "Ana",
-                LastName = "Morales",
-                UserName = "amorales",
-                PassWord = "amorales",
+                FirstName = "Anna",
+                LastName = "Zuniga",
+                UserName = "azuniga",
+                PassWord = "azuniga",
                 CreatedAt = DateTime.Now,
                 UpdatedAt = DateTime.Now
             };
             var account = new Account
             {
-                Balance = 50,
+                Balance = 70,
                 User = user,
                 CreatedAt = DateTime.Now,
                 UpdatedAt = DateTime.Now
