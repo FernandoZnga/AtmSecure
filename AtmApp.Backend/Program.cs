@@ -4,21 +4,22 @@ using System.Linq;
 
 namespace AtmApp.Backend
 {
-    public class Program
+    public class hash
     {
         private static AtmContext _context = new AtmContext();
 
         static void Main(string[] args)
         {
         }
+        public Hash GetHash = new Hash();
+
         public bool CreateUser(string firstName, string lastName, string userName, string passWord)
         {
-            Hash hash = new Hash();
             var user = new User();
             user.FirstName = firstName;
             user.LastName = lastName;
             user.UserName = userName;
-            user.PassWord = hash.GenerateSHA256String(passWord);
+            user.PassWord = GetHash.SHA256String(passWord);
 
             var account = new Account();
             account.User = user;
@@ -46,7 +47,7 @@ namespace AtmApp.Backend
         {
             var user = new User();
             user = _context.Users.FirstOrDefault(s => s.UserName == userName);
-            if (user.PassWord == passWord)
+            if (user.PassWord == GetHash.SHA256String(passWord))
             {
                 return true;
             } else

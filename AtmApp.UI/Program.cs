@@ -20,13 +20,13 @@ namespace AtmApp.UI
         public bool HandleNewUser(string firstName, string lastName, string userName, string passWord)
         {
             var executionOk = new bool();
-            var handle = new AtmApp.Backend.Program();
+            var handle = new AtmApp.Backend.hash();
             return executionOk = handle.CreateUser(firstName, lastName, userName, passWord);
         }
         public bool HandleLogin(string userName, string passWord)
         {
             var executionOk = new bool();
-            var handle = new AtmApp.Backend.Program();
+            var handle = new AtmApp.Backend.hash();
             return executionOk = handle.PerformLogin(userName, passWord);
         }
     }

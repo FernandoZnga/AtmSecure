@@ -5,14 +5,14 @@ namespace AtmApp.Backend
 {
     public class Hash
     {
-        public string GenerateSHA256String(string textToHash)
+        public string SHA256String(string textToHash)
         {
             SHA256 sha256 = SHA256Managed.Create();
             byte[] bytes = Encoding.UTF8.GetBytes(textToHash);
             byte[] hash = sha256.ComputeHash(bytes);
             return GetStringFromHash(hash);
         }
-        public string GenerateSHA512String(string textToHash)
+        public string SHA512String(string textToHash)
         {
             SHA512 sha512 = SHA512Managed.Create();
             byte[] bytes = Encoding.UTF8.GetBytes(textToHash);
