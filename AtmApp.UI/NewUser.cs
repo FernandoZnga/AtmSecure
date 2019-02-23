@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using AtmApp.UI;
-using AtmApp.Domain;
 
 namespace AtmApp.UI
 {
@@ -28,19 +19,13 @@ namespace AtmApp.UI
             }
             else
             {
-                var user = new User() {
-                    FirstName = textBoxFirstName.Text,
-                    LastName = textBoxLastName.Text,
-                    UserName = textBoxUsername.Text,
-                    PassWord = textBoxPassword.Text
-                };
-                var account = new Account()
-                {
-                    User = user
-                };
-                var handle = new Program();
-                var executionOk = handle.InsertNewUser(user, account);
-                if (executionOk)
+                var use = new Program();
+                var executeOk = new bool();
+
+                executeOk = use.HandleNewUser(
+                    textBoxFirstName.Text, textBoxLastName.Text,
+                    textBoxUsername.Text, textBoxPassword.Text);
+                if (executeOk)
                 {
                     MessageBox.Show("User created!","Success");
                     textBoxFirstName.Clear();

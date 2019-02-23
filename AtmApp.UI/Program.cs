@@ -1,18 +1,12 @@
-﻿using AtmApp.Data;
-using AtmApp.Domain;
-using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using AtmApp.Backend;
 namespace AtmApp.UI
 {
     internal class Program
     {
-        private static AtmContext _context = new AtmContext();
+        //private static AtmContext _context = new AtmContext();
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -23,32 +17,17 @@ namespace AtmApp.UI
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Login());
         }
-
-        public bool InsertNewUser(User user, Account account)
+        public bool HandleNewUser(string firstName, string lastName, string userName, string passWord)
         {
-            using (var context = new AtmContext())
-            {
-                try
-                {
-                    //context.GetService<ILoggerFactory>().AddProvider(new MyLoggerProvider());
-                    context.Users.Add(user);
-                    context.Accounts.Add(account);
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
-                finally
-                {
-                    context.SaveChanges();
-                }
-            }
+            var executionOk = new bool();
+            var handle = new AtmApp.Backend.hash();
+            return executionOk = handle.CreateUser(firstName, lastName, userName, passWord);
         }
-        public User PerformLogin(string username)
+        public bool HandleLogin(string userName, string passWord)
         {
-            var users = new User();
-            return users = _context.Users.FirstOrDefault(s => s.UserName == username);
+            var executionOk = new bool();
+            var handle = new AtmApp.Backend.hash();
+            return executionOk = handle.PerformLogin(userName, passWord);
         }
     }
 }
